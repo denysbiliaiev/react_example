@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { TransitionMotion, spring } from 'react-motion'
 import { selectedEventsSelector } from '../../ducks/events'

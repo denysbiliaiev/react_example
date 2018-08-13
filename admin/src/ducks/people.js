@@ -8,9 +8,7 @@ import {
   takeEvery,
   select,
   take,
-  fork,
   spawn,
-  cancel,
   cancelled,
   race
 } from 'redux-saga/effects'

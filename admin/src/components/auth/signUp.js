@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import validator from 'email-validator'
+import Button from '@material-ui/core/Button'
 import ErrorField from '../common/error-field'
 
 class SignUpForm extends Component {
@@ -9,16 +10,17 @@ class SignUpForm extends Component {
   render() {
     return (
       <div>
-        <h2>Sign Up</h2>
         <form onSubmit={this.props.handleSubmit}>
-          <Field name="email" component={ErrorField} label="Email:" />
+          <Field name="email" label="Email" component={ErrorField} />
           <Field
             name="password"
-            component={ErrorField}
-            label="Password:"
+            label="Password"
             type="password"
+            component={ErrorField}
           />
-          <button type="submit">Sign Up</button>
+          <Button type="submit" variant="contained" color="primary">
+            Sign Up
+          </Button>
         </form>
       </div>
     )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import TextField from '@material-ui/core/TextField'
+import FormHelperText from '@material-ui/core/FormHelperText'
 
 class ErrorField extends Component {
   static propTypes = {}
@@ -6,17 +8,21 @@ class ErrorField extends Component {
   render() {
     const {
       input,
-      type,
-      label,
-      meta: { error, touched }
+      meta: { error, touched },
+      ...rest
     } = this.props
-    const errorMessage = touched &&
-      error && <h3 style={{ color: 'red' }}>{error}</h3>
+
+    const isValueNotCorrect = touched && error
+    const errorMessage = isValueNotCorrect && (
+      <h3 style={{ color: 'red' }}>{error}</h3>
+    )
+
     return (
       <div>
-        {label}
-        <input {...input} type={type} />
-        {errorMessage}
+        <TextField error={isValueNotCorrect} {...input} {...rest} />
+        <FormHelperText className="errorValidation">
+          {errorMessage}
+        </FormHelperText>
       </div>
     )
   }

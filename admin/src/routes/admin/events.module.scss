@@ -1,0 +1,10 @@
+.events :global{
+  display: flex;
+  border: 2px solid black;
+
+  .persons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

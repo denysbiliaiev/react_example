@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { authorizedSelector } from '../../ducks/auth'
 
@@ -15,7 +15,11 @@ class ProtectedRoute extends Component {
     return this.props.authorized ? (
       <this.props.component match={match} />
     ) : (
-      <h1>Not authorized</h1>
+      <div>
+        <NavLink to="/auth/signIn" activeStyle={{ color: 'red' }}>
+          Please signIn
+        </NavLink>
+      </div>
     )
   }
 }

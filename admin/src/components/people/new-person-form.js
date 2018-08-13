@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { reduxForm, Field } from 'redux-form'
 import validateEmail from 'email-validator'
 import ErrorField from '../common/error-field'
+import Button from '@material-ui/core/Button'
 
 class NewPersonForm extends Component {
   static propTypes = {}
@@ -14,7 +15,9 @@ class NewPersonForm extends Component {
           <Field name="lastName" label="last name" component={ErrorField} />
           <Field name="email" label="email" component={ErrorField} />
           <div>
-            <input type="submit" />
+            <Button type="submit" variant="contained" color="primary">
+              Add
+            </Button>
           </div>
         </form>
       </div>

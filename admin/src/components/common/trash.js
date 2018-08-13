@@ -14,7 +14,7 @@ class Trash extends Component {
       border: `1px solid ${isOver ? 'green' : 'black'}`,
       width: 100,
       height: 100,
-      position: 'fixed',
+      //position: 'fixed',
       top: 0,
       right: 0
     }

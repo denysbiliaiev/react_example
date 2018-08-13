@@ -1,0 +1,12 @@
+.app :global {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .errorValidation {
+    font-size: 0.7em;
+  }
+}
